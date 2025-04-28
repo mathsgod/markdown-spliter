@@ -1,7 +1,6 @@
 {
     "name": "mathsgod/markdown-splitter",
     "description": "A Markdown splitter that divides content based on heading levels.",
-    "type": "project",
     "require": {
         "php": "^7.4 || ^8.0"
     },
@@ -17,5 +16,6 @@
         "test": "phpunit"
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "license": "MIT"
 }
