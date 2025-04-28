@@ -25,9 +25,43 @@ composer install
 
 ## Usage
 
-1. Prepare your Markdown text.
-2. Use the `index.php` file to input your Markdown content.
-3. The application will process the input and split it based on the heading levels defined in the Markdown.
+### Using the MarkdownSplitter class in your code
+
+You can use the `MarkdownSplitter` class directly in your PHP code to split Markdown content by heading levels. Example:
+
+```php
+require_once 'src/MarkdownSplitter.php';
+
+$markdownContent = <<<MD
+# Heading 1
+Content under heading 1
+
+## Heading 2
+Content under heading 2
+
+### Heading 3
+Content under heading 3
+MD;
+
+$splitter = new MarkdownSplitter($markdownContent);
+$splitter->split();
+$sections = $splitter->getSections();
+
+foreach ($sections as $section) {
+    echo "Level: {$section['level']}\n";
+    echo "Title: {$section['title']}\n";
+    echo "Content:\n{$section['content']}\n";
+    echo "----------------------\n";
+}
+```
+
+- `level`: The heading level (1 for `#`, 2 for `##`, etc.)
+- `title`: The heading text
+- `content`: The content under the heading
+
+### Using the web interface
+
+You can also use the provided `index.php` to split Markdown via a simple web form. Open `index.php` in your browser, paste your Markdown content, and submit the form to see the split results.
 
 ## Contributing
 
