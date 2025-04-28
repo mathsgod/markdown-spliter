@@ -5,7 +5,7 @@ This project is a Markdown splitter that divides Markdown content based on diffe
 ## Project Structure
 
 ```
-markdown-spliter
+markdown-splitter
 ├── src
 │   ├── MarkdownSplitter.php        # Handles the logic for splitting Markdown files based on heading levels.
 │   └── utils
